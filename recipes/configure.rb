@@ -30,6 +30,7 @@ if sidekiq_instance?
         source "sidekiq.yml.erb"
         variables({
           :require => "/data/#{app_name}/current"
+          :queues => [["email", 2]]
         })
       end
     end
