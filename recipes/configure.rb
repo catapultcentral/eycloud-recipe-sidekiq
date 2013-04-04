@@ -29,8 +29,8 @@ if sidekiq_instance?
         mode 0644
         source "sidekiq.yml.erb"
         variables({
-          :require => "/data/#{app_name}/current"
-          :queues => [["email", 2]]
+          :require => "/data/#{app_name}/current",
+          :queues => { "email" => 2 }
         })
       end
     end
